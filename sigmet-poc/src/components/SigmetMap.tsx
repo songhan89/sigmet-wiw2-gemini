@@ -192,24 +192,36 @@ export const SigmetMap: React.FC<SigmetMapProps> = ({
       
       const isSelected = selectedSigmet?.fileName === sig.fileName;
       const isThunderstorm = sig.phenomenonCode.includes('TS') || sig.phenomenonName.toLowerCase().includes('thunderstorm');
-      const rawCode = sig.phenomenonCode || (isThunderstorm ? 'EMBD_TS' : 'SEV_ICE');
+      const isIcing = sig.phenomenonCode.includes('ICE') || sig.phenomenonName.toLowerCase().includes('icing');
+      const rawCode = sig.phenomenonCode || (isThunderstorm ? 'EMBD_TS' : isIcing ? 'SEV_ICE' : 'SIGMET');
       const textFallback = rawCode.includes('TS') ? 'TS' : rawCode.includes('ICE') ? 'ICE' : rawCode.slice(0, 4);
       const badgeBg = isThunderstorm ? 'bg-amber-100 border-red-500' : 'bg-sky-100 border-sky-500';
 
-      // Symbol: WMO SVG with graceful text phenomenon fallback
-      const iconSvg = `
-        <div class="relative flex items-center justify-center w-[22px] h-[22px] rounded ${badgeBg} border overflow-hidden p-0.5 shadow-sm">
-          <img
-            src="/symbols/${rawCode}.svg"
-            alt="${rawCode}"
-            class="w-full h-full object-contain filter contrast-125"
-            onerror="this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='flex';"
-          />
-          <span style="display:none;" class="w-full h-full font-mono font-black text-[9px] text-slate-900 items-center justify-center">
+      // Symbol: High-contrast official WMO/ICAO vector with text fallback
+      const iconSvg = isThunderstorm
+        ? `<div class="relative flex items-center justify-center w-[22px] h-[22px] rounded ${badgeBg} border overflow-hidden p-0.5 shadow-sm" title="WMO 17 Thunderstorm">
+            <svg viewBox="-27.5 -27.5 55 55" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g style="stroke: #991b1b; stroke-width: 3.5; fill: none; stroke-linecap: round; stroke-linejoin: round;">
+                <path d="M -14.5,-17.5 H 9.5 L -4.5,2 L 10,16.5" />
+                <path d="M -10.5,-17.5 V 19.5" />
+                <path d="M 9,16.5 H 10 V 15.5 Z" />
+              </g>
+            </svg>
+          </div>`
+        : isIcing
+        ? `<div class="relative flex items-center justify-center w-[22px] h-[22px] rounded ${badgeBg} border overflow-hidden p-0.5 shadow-sm" title="ICAO Severe Aircraft Icing">
+            <svg viewBox="10 15 35 25" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g style="stroke: #0369a1; stroke-width: 2.5; fill: none; stroke-linecap: round;">
+                <path d="M 16,22 A 12,12 0 0 0 39,22" />
+                <path d="M 24,36 V 26" />
+                <path d="M 28,36 V 26" />
+                <path d="M 31,36 V 26" />
+              </g>
+            </svg>
+          </div>`
+        : `<div class="relative flex items-center justify-center w-[22px] h-[22px] rounded ${badgeBg} border font-mono font-black text-[9px] text-slate-900 shadow-sm">
             ${textFallback}
-          </span>
-        </div>
-      `;
+          </div>`;
 
       // Intensity Badge
       let intensityHtml = '';
