@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => {
   const maptilerApi = env.MAPTILER_API || env.VITE_MAPTILER_API || '';
 
   return {
+    base: './',
     plugins: [react()],
     define: {
       'import.meta.env.VITE_MAPTILER_API': JSON.stringify(maptilerApi),
