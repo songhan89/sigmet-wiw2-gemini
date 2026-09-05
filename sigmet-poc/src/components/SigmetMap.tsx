@@ -45,8 +45,10 @@ export const SigmetMap: React.FC<SigmetMapProps> = ({
   useEffect(() => {
     if (!mapContainer.current) return;
 
-    // Use MapTiler Dataviz Dark or Basic
-    const mapStyle = `https://api.maptiler.com/maps/dataviz-dark/style.json?key=${maptilerKey}`;
+    // Use MapTiler if key is configured; otherwise fallback to open Carto Dark Matter style
+    const mapStyle = maptilerKey
+      ? `https://api.maptiler.com/maps/dataviz-dark/style.json?key=${maptilerKey}`
+      : 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
 
     const map = new maplibregl.Map({
       container: mapContainer.current,
