@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<channel>
+    <title>Singapore SIGMET</title>
+    <source>Meteorological Service Singapore</source>
+    <item>
+        <Year>2026</Year>
+        <Month>05</Month>
+        <Day>28</Day>
+        <SIGMETIssue>1347</SIGMETIssue>
+        <Type>WS</Type>
+        <SIGMET_NO>A13</SIGMET_NO>
+        <IMAGE_NAME>sigmet_ws_13_20260528_1347.png</IMAGE_NAME>
+        <VALID_START>1400</VALID_START>
+        <VALID_END>1800</VALID_END>
+        <CNL>No</CNL>
+        <SIGMET>WSJC SIGMET A13 VALID 281400/281800 WSSS- WSJC SINGAPORE FIR EMBD TS OBS WI N0534 E10829 - N0457 E10816 - N0413 E10718 - N0335 E10605 - N0336 E10413 - N0620 E10453 - N0534 E10829 TOP FL520 MOV WSW 05KT NC</SIGMET>
+    </item>
+</channel>

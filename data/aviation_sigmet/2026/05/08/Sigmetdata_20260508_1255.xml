@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<channel>
+    <title>Singapore SIGMET</title>
+    <source>Meteorological Service Singapore</source>
+    <item>
+        <Year>2026</Year>
+        <Month>05</Month>
+        <Day>08</Day>
+        <SIGMETIssue>1255</SIGMETIssue>
+        <Type>WS</Type>
+        <SIGMET_NO>B03</SIGMET_NO>
+        <IMAGE_NAME>sigmet_ws_53_20260508_1255.png</IMAGE_NAME>
+        <VALID_START>1300</VALID_START>
+        <VALID_END>1700</VALID_END>
+        <CNL>No</CNL>
+        <SIGMET>WSJC SIGMET B03 VALID 081300/081700 WSSS- WIIF JAKARTA FIR EMBD TS OBS WI N0108 E10346 - N0115 E10422 - N0041 E10510 - S0018 E10355 - N0026 E10201 - N0129 E10240 - N0108 E10346 TOP FL520 MOV WSW 10KT NC</SIGMET>
+    </item>
+</channel>

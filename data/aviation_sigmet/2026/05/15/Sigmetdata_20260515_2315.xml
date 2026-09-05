@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<channel>
+    <title>Singapore SIGMET</title>
+    <source>Meteorological Service Singapore</source>
+    <item>
+        <Year>2026</Year>
+        <Month>05</Month>
+        <Day>15</Day>
+        <SIGMETIssue>2315</SIGMETIssue>
+        <Type>WS</Type>
+        <SIGMET_NO>B02</SIGMET_NO>
+        <IMAGE_NAME>sigmet_ws_52_20260515_2315.png</IMAGE_NAME>
+        <VALID_START>2315</VALID_START>
+        <VALID_END>0215</VALID_END>
+        <CNL>No</CNL>
+        <SIGMET>WSJC SIGMET B02 VALID 152315/160215 WSSS- WIIF JAKARTA FIR EMBD TS OBS WI N0125 E10617 - N0046 E10534 - N0120 E10445 - N0217 E10521 - N0219 E10522 - N0317 E10530 - N0125 E10617 TOP FL530 MOV SW 10KT NC</SIGMET>
+    </item>
+</channel>
